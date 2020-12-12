@@ -5,7 +5,7 @@ Implementation is based on paper *A moving average based filtering system with i
 ## Requirements
 * [WFDB Software Package](https://archive.physionet.org/physiotools/wfdb.shtml)
 
-## Notes
+## Tools
 
 **Download MIT-BIH database [2]**
 ```bash
@@ -15,8 +15,17 @@ $ wget -r -N -c -np https://physionet.org/files/mitdb/1.0.0/
 
 **Convert database to MATLAB format**
 ```bash
-$ cd data
-$ ./convert.sh
+$ ./convert2mat.sh
+```
+
+**Convert MATLAB detections to qrs format**
+```bash
+$ ./convert2qrs.sh
+```
+
+**Evaluate results**
+```bash
+$ ./evaluate.sh
 ```
 
 ## Literature

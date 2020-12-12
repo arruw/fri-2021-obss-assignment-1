@@ -1,5 +1,5 @@
 #!/bin/bash
-cd ./physionet.org/files/mitdb/1.0.0/
+cd ./data/physionet.org/files/mitdb/1.0.0/
 FILES=./*.hea
 
 # For all record files run conversion to Matlab compatible file
