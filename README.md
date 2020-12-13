@@ -2,6 +2,8 @@
 
 Implementation is based on paper *A moving average based filtering system with its application to real-time QRS detection* [1].
 
+Report: [here](./report.pdf)
+
 ## Requirements
 * [WFDB Software Package](https://archive.physionet.org/physiotools/wfdb.shtml)
 

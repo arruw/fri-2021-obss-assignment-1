@@ -9,7 +9,7 @@ function [idx] = QRSDetect(fileName, M, SWP, SWD, alpha, gamma)
   x = load(fileName).val(1,:);
   
   % =====================================
-  % 2.1. Linear High-Pass Filteri
+  % 2.1. Linear High-Pass Filter Stage
   % =====================================
   
   % M-point moving average filter
@@ -21,7 +21,7 @@ function [idx] = QRSDetect(fileName, M, SWP, SWD, alpha, gamma)
   y = y2 - y1;
   
   % =====================================
-  % 2.2. Nonlinear Low-Pass Filtering Stag
+  % 2.2. Nonlinear Low-Pass Filter Stag
   % =====================================
   y = movsum(y.^2, SWP);
   
