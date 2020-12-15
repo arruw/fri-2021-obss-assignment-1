@@ -6,7 +6,7 @@ function Detector( record )
 
   fileName = sprintf('%sm.mat', record);
   t=cputime();
-  idx = QRSDetect(fileName, 5, 30, 90, 0.05, 0.15);
+  idx = QRSDetect(fileName, 5, 15, 90, 0.05, 0.15);
   fprintf('Running time: %f\n', cputime() - t);
   asciName = sprintf('%s.asc',record);
   fid = fopen(asciName, 'wt');

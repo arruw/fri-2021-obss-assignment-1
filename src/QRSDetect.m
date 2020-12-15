@@ -30,7 +30,7 @@ function [idx] = QRSDetect(fileName, M, SWP, SWD, alpha, gamma)
   % =====================================
   [peaks, loc] = findpeaks(y, 'MinPeakDistance', SWD);
   
-  treshold = filter([1-alpha, alpha*gamma], 1, peaks);
+  treshold = filter([alpha*gamma], [1, alpha-1], peaks);
 
   idx = loc(peaks > treshold);
 end

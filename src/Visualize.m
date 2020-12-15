@@ -2,7 +2,7 @@ clear;
 clf;
 
 M = 5;
-SWP = 30;
+SWP = 15;
 SWD = 90;
 alpha = 0.05;
 gamma = 0.15;
@@ -32,7 +32,7 @@ y4 = movsum(y3.^2, SWP);
 % =====================================
 [peaks, loc] = findpeaks(y4, 'MinPeakDistance', SWD);
 
-treshold = filter([1-alpha, alpha*gamma], 1, peaks);
+treshold = filter([alpha*gamma], [1, alpha-1], peaks);
 
 idx = loc(peaks > treshold);
 
@@ -41,7 +41,7 @@ figure(1);
 subplot(3,1,1);
 hold on;
 plot(x);
-plot(loc(peaks > treshold), x(loc(peaks > treshold)), 'r*');
+plot(idx, x(idx), 'r*');
 grid;
 hold off;
 title('Original signal & detections');
